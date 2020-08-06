@@ -23,6 +23,10 @@
       "ngx-policy-authorization": [
         "dist/ngx-policy-authorization/ngx-policy-authorization",
         "dist/ngx-policy-authorization"
+      ],
+      "ngx-feature-flags-testing": [
+        "dist/ngx-feature-flags-testing/ngx-feature-flags-testing",
+        "dist/ngx-feature-flags-testing"
       ]
     }
   },

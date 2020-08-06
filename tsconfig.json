@@ -12,6 +12,12 @@
     },
     {
       "path": "./projects/ngx-policy-authorization/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ngx-feature-flags-testing/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ngx-feature-flags-testing/tsconfig.spec.json"
     }
 ]
 }

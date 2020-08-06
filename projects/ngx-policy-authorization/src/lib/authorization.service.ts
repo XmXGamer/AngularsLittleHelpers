@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AuthorizationPolicyBuilder } from './authorization-policy-builder';
-import { AuthorizationPolicy } from './authorization-policy';
+import { AuthorizationPolicyBuilder } from './models/authorization-policy-builder';
+import { AuthorizationPolicy } from './models/authorization-policy';
 import { Observable, Subject } from 'rxjs';
 import { PermissionChangedEvent } from './permission-changed-event';
 import { PermissionChangeType } from './permission-change-type.enum';
@@ -9,7 +9,7 @@ import { PermissionChangeType } from './permission-change-type.enum';
   providedIn: 'root'
 })
 export class AuthorizationService {
-  removePermission(arg0: string) {
+  removePermission(arg0: string): void {
     this._permissons.delete(arg0);
     this._permissionChangeSubject.next(new PermissionChangedEvent(PermissionChangeType.Remove, Array.from(this._permissons)))
   }
@@ -37,7 +37,7 @@ export class AuthorizationService {
     return policy.authorize(Array.from(this._permissons));
   }
 
-  constructor() { 
+  constructor() {
     this._policys = new Map<string, AuthorizationPolicy>();
     this._permissons = new Set<string>();
     this._permissionChangeSubject = new Subject<PermissionChangedEvent>();

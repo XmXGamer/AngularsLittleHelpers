@@ -1,4 +1,4 @@
-import { IRequirement } from './requirements/i-requirement';
+import { IRequirement } from '../requirements/i-requirement';
 
 export class AuthorizationPolicy {
     private _requirements: IRequirement[];
