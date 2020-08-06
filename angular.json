@@ -2,5 +2,46 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "ngx-policy-authorization": {
+      "projectType": "library",
+      "root": "projects/ngx-policy-authorization",
+      "sourceRoot": "projects/ngx-policy-authorization/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-policy-authorization/tsconfig.lib.json",
+            "project": "projects/ngx-policy-authorization/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-policy-authorization/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-policy-authorization/src/test.ts",
+            "tsConfig": "projects/ngx-policy-authorization/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-policy-authorization/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-policy-authorization/tsconfig.lib.json",
+              "projects/ngx-policy-authorization/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "ngx-policy-authorization"
 }
