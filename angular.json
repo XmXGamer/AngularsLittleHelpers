@@ -43,7 +43,7 @@
         }
       }
     },
-    "NgxFeatureFlagsTesting": {
+    "ngx-feature-flags-testing": {
       "projectType": "library",
       "root": "projects/ngx-feature-flags-testing",
       "sourceRoot": "projects/ngx-feature-flags-testing/src",

@@ -4,6 +4,6 @@ export class ExcludePermissionRequirement {
         this._permission = permission;
     }
     handle(permissions: string[]): boolean {
-        return !permissions.includes(this._permission)
+        return !permissions.includes(this._permission);
     }
 }

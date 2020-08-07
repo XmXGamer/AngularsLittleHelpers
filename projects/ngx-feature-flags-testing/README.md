@@ -1,24 +1,52 @@
-# NgxFeatureFlagsTesting
+# ngx-feature-flags-testing
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+ngx-feature-flags-testing is a package to simplify writting tests when you use [ngx-feature-flags](https://www.npmjs.com/package/ngx-feature-flags). It offers you the ability to define directly feature flags in the import section of your `TestBed`.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project NgxFeatureFlagsTesting` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project NgxFeatureFlagsTesting`.
-> Note: Don't forget to add `--project NgxFeatureFlagsTesting` or else it will be added to the default project in your `angular.json` file. 
+The `ngx-feature-flags-testing` module needs to be installed as a test dependency using your favorite NPM client.
 
-## Build
+```sh
+npm install ngx-feature-flags-testing --save-dev
+```
+or
+```sh
+yarn add ngx-feature-flags-testing --dev
+```
+## Usage
 
-Run `ng build NgxFeatureFlagsTesting` to build the project. The build artifacts will be stored in the `dist/` directory.
+The `NgxFeatureFlagsTestingModule` class can provide all of the capabilities of the `ngx-feature-flags` `NgxFeatureFlagsModule ` (directives, pipes,and services) and easily be configured with feature flags for your test cases.
 
-## Publishing
+The module can easily be imported into your test cases:
 
-After building your library with `ng build NgxFeatureFlagsTesting`, go to the dist folder `cd dist/ngx-feature-flags-testing` and run `npm publish`.
+```ts
+import { NgxFeatureFlagsTestingModule } from 'ngx-feature-flags-testing';
+```
 
-## Running unit tests
+### Using without feature flags
 
-Run `ng test NgxFeatureFlagsTesting` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```ts
+TestBed.configureTestingModule({
+    imports: [NgxFeatureFlagsTestingModule]
+});
+```
 
-## Further help
+### Using with one feature flag
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```ts
+TestBed.configureTestingModule({
+    imports: [NgxFeatureFlagsTestingModule.withFeatureFlag('featureA', true)]
+});
+```
+
+### Using with multiple feature flags
+
+```ts
+TestBed.configureTestingModule({
+    imports: [
+        NgxFeatureFlagsTestingModule.withFeatureFlags(
+            new Map([['featureA', true],['featureB', false]])
+        )
+    ]
+});
+```

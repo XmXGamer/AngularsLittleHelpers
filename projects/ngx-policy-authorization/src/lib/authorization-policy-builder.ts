@@ -1,8 +1,8 @@
-import { StaticValueRequirement } from '../requirements/static-value-requirement';
-import { IRequirement } from '../requirements/i-requirement';
-import { AuthorizationPolicy } from './authorization-policy';
-import { PermissionRequirement } from '../requirements/permission-requirement';
-import { ExcludePermissionRequirement } from '../requirements/exclude-permission-requirement';
+import { StaticValueRequirement } from './requirements/static-value-requirement';
+import { IRequirement } from './requirements/i-requirement';
+import { AuthorizationPolicy } from './models/authorization-policy';
+import { PermissionRequirement } from './requirements/permission-requirement';
+import { ExcludePermissionRequirement } from './requirements/exclude-permission-requirement';
 
 export class AuthorizationPolicyBuilder {
     private _requirements: IRequirement[] = [];

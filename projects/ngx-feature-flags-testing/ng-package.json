@@ -3,5 +3,9 @@
   "dest": "../../dist/ngx-feature-flags-testing",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "ngx-feature-flags"
+  ]
 }

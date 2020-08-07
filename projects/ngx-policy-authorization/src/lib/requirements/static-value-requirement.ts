@@ -5,7 +5,7 @@ export class StaticValueRequirement implements IRequirement{
     constructor(staticValue: boolean){
         this._stativValue = staticValue;
     }
-    handle(permissions: string[]): boolean {
+    handle(_permissions: string[]): boolean {
         return this._stativValue;
     }
 }

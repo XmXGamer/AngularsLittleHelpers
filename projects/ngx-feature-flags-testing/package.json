@@ -1,9 +1,35 @@
 {
   "name": "ngx-feature-flags-testing",
-  "version": "0.0.1",
+  "author": {
+    "name": "Marcel Barner",
+    "email": "marcel.barner@web.de"
+  },
+  "description": "@ngx-feature-flags-testing is a package to simplify the effort to write test with the package ngx-feature-flags.",
+  "bugs": {
+    "url": "https://github.com/XmXGamer/AngularsLittleHelpers/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XmXGamer/AngularsLittleHelpers.git"
+  },
+  "homepage": "https://github.com/XmXGamer/AngularsLittleHelpers",
+  "keywords": [
+    "Angular",
+    "Feature",
+    "Toggle",
+    "Flag",
+    "Flags",
+    "Directive",
+    "Service",
+    "Guard",
+    "Testing"
+  ],
+  "license": "MIT",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^10.0.6",
-    "@angular/core": "^10.0.6"
+    "@angular/core": "^10.0.6",
+    "ngx-feature-flags": "^1.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"

@@ -108,9 +108,7 @@
     },
     "variable-name": {
       "options": [
-        "ban-keywords",
-        "check-format",
-        "allow-pascal-case"
+        "ban-keywords"
       ]
     },
     "whitespace": {
@@ -138,6 +136,38 @@
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true,
-    "early-exit": true
+    "early-exit": true,
+    "naming-convention": [
+      true,
+      {"type": "default", "format": "camelCase", "leadingUnderscore": "forbid", "trailingUnderscore": "forbid"},
+      {"type": "variable", "modifiers": ["global", "const"], "format": "UPPER_CASE"},
+      {"type": "variable", "modifiers": ["export", "const"], "format": "UPPER_CASE"},
+      {"type": "functionVariable", "modifiers": ["export", "const"], "format": "UPPER_CASE"},
+      {"type": "function", "modifiers": ["export", "global"], "format": "UPPER_CASE"},
+      {"type": "parameter", "modifiers": "unused", "leadingUnderscore": "allow"},
+      {"type": "member", "modifiers": "private", "leadingUnderscore": "require"},
+      {"type": "member", "modifiers": "protected", "leadingUnderscore": "require"},
+      {"type": "method", "format": "camelCase", "leadingUnderscore": "forbid"},
+      {"type": "method", "filter": "^toJSON$", "format": null},
+      {"type": "property", "modifiers": ["public", "static", "const"], "format": "UPPER_CASE"},
+      {"type": "type", "format": "PascalCase"},
+      {"type": "class", "modifiers": "abstract", "prefix": "Abstract"},
+      {"type": "interface", "prefix": "I"},
+      {"type": "genericTypeParameter", "prefix": "T"},
+      {"type": "enumMember", "format": "PascalCase"}
+    ],
+    "no-accessor-recursion": true,
+    "no-collapsible-if": true,
+    "no-else-after-return": [true, "allow-else-if"],
+    "no-return-undefined": true,
+    "no-static-this": true,
+    "no-unnecessary-else": true,
+    "no-unused": true,
+    "no-var-before-return": true,
+    "object-shorthand-properties-first": true,
+    "prefer-const-enum": true
+  },
+  "linterOptions": {
+    "exclude": ["**/test.ts", "**/*.config.js", "**/*.conf.js"]
   }
 }

@@ -1,4 +1,4 @@
-import { Directive, Input, ElementRef, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 import { AuthorizationService } from './authorization.service';
 
 @Directive({
@@ -9,23 +9,25 @@ export class AuthorizeDirective {
 
   @Input() set authorize(policy: string){
     this._policy = policy;
+    this.updateView();
   }
 
   constructor(
-    private readonly element: ElementRef,
-    private readonly templateRef: TemplateRef<any>,
-    private readonly viewContainer: ViewContainerRef,
-    private readonly authorizationService: AuthorizationService
+    // tslint:disable-next-line: no-any
+    private readonly _templateRef: TemplateRef<any>,
+    private readonly _viewContainer: ViewContainerRef,
+    private readonly _authorizationService: AuthorizationService
   ) { }
 
-  private updateView() {
+  private updateView(): void {
     if (this.checkPermission()) {
-        this.viewContainer.createEmbeddedView(this.templateRef);
+        this._viewContainer.createEmbeddedView(this._templateRef);
     } else {
-      this.viewContainer.clear();
+      this._viewContainer.clear();
     }
   }
+
   private checkPermission(): boolean {
-    return this.authorizationService.authorize(this._policy);
+    return this._authorizationService.authorize(this._policy);
   }
 }
