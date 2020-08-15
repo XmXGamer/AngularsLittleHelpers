@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1597393836996" clover="3.2.0">
+  <project timestamp="1597393836997" name="All files">
+    <metrics statements="31" coveredstatements="24" conditionals="2" coveredconditionals="2" methods="14" coveredmethods="9" elements="47" coveredelements="35" complexity="0" loc="31" ncloc="31" packages="2" files="4" classes="4"/>
+    <package name="models">
+      <metrics statements="28" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="12" coveredmethods="7"/>
+      <file name="authorization-options.ts" path="C:\Users\marcel.barner\Documents\GitHub\AngularsLittleHelpers\projects\ngx-policy-authorization\src\lib\models\authorization-options.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="26" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+      </file>
+      <file name="authorization-policy-builder.ts" path="C:\Users\marcel.barner\Documents\GitHub\AngularsLittleHelpers\projects\ngx-policy-authorization\src\lib\models\authorization-policy-builder.ts">
+        <metrics statements="15" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="3"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+      </file>
+      <file name="authorization-policy.ts" path="C:\Users\marcel.barner\Documents\GitHub\AngularsLittleHelpers\projects\ngx-policy-authorization\src\lib\models\authorization-policy.ts">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="requirements">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="static-value-requirement.ts" path="C:\Users\marcel.barner\Documents\GitHub\AngularsLittleHelpers\projects\ngx-policy-authorization\src\lib\requirements\static-value-requirement.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

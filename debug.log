@@ -1,4 +1,0 @@
-[0806/093915.525:ERROR:crash_report_database_win.cc(580)] CreateDirectory C:\Users\MARCEL~1.BAR\AppData\Local\Temp\karma-289958\Crashpad: The system cannot find the path specified. (0x3)
-[0806/093915.529:ERROR:exit_code_watcher_win.cc(87)] Failed to wait for process exit or stop event
-[0806/093915.589:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: The pipe has been ended. (0x6D)
-[0806/093915.591:ERROR:crash_report_database_win.cc(580)] CreateDirectory C:\Users\MARCEL~1.BAR\AppData\Local\Temp\karma-289958\Crashpad: The system cannot find the path specified. (0x3)

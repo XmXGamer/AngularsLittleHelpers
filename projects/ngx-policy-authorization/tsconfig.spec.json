@@ -3,15 +3,9 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/spec",
-    "types": [
-      "jasmine"
-    ]
+    "types": ["jest", "jest-extended"],
+    "emitDecoratorMetadata": true
   },
-  "files": [
-    "src/test.ts"
-  ],
-  "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
-  ]
+  "files": [],
+  "include": ["**/*.spec.ts", "**/*.d.ts"]
 }

@@ -1,33 +1,42 @@
-import { StaticValueRequirement } from '../requirements/static-value-requirement';
-import { IRequirement } from '../requirements/i-requirement';
-import { AuthorizationPolicy } from './authorization-policy';
-import { PermissionRequirement } from '../requirements/permission-requirement';
 import { ExcludePermissionRequirement } from '../requirements/exclude-permission-requirement';
-
+import { IRequirement } from '../requirements/i-requirement';
+import { PermissionRequirement } from '../requirements/permission-requirement';
+import { StaticValueRequirement } from '../requirements/static-value-requirement';
+import { AuthorizationPolicy } from './authorization-policy';
+/**
+ * Offers a simple way to build policies
+ *
+ * @export
+ * @class AuthorizationPolicyBuilder
+ */
 export class AuthorizationPolicyBuilder {
-    private _requirements: IRequirement[] = [];
+  private readonly requirements: IRequirement[] = [];
 
-    build(): AuthorizationPolicy {
-        return new AuthorizationPolicy(this._requirements);
-    }
-    public staticValue(val: boolean): AuthorizationPolicyBuilder{
-        this._requirements.push(new StaticValueRequirement(val));
-        return this;
-    }
+  public build(): AuthorizationPolicy {
+    return new AuthorizationPolicy(this.requirements);
+  }
+  public staticValue(val: boolean): AuthorizationPolicyBuilder {
+    this.requirements.push(new StaticValueRequirement(val));
 
-    hasPermission(arg0: string): AuthorizationPolicyBuilder {
-        this._requirements.push(new PermissionRequirement(arg0));
-        return this;
-    }
+    return this;
+  }
 
-    excludePermission(arg0: string): AuthorizationPolicyBuilder {
-        this._requirements.push(new ExcludePermissionRequirement(arg0));
-        return this;
-    }
+  public hasPermission(arg0: string): AuthorizationPolicyBuilder {
+    this.requirements.push(new PermissionRequirement(arg0));
 
-    addRequirement(arg0: IRequirement): AuthorizationPolicyBuilder{
-        this._requirements.push(arg0);
-        return this;
-    }
+    return this;
+  }
+
+  public excludePermission(arg0: string): AuthorizationPolicyBuilder {
+    this.requirements.push(new ExcludePermissionRequirement(arg0));
+
+    return this;
+  }
+
+  public addRequirement(arg0: IRequirement): AuthorizationPolicyBuilder {
+    this.requirements.push(arg0);
+
+    return this;
+  }
 
 }

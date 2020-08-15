@@ -24,9 +24,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-policy-authorization/src/test.ts",
-            "tsConfig": "projects/ngx-policy-authorization/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-policy-authorization/karma.conf.js"
+            "tsConfig": "projects/ngx-policy-authorization/tsconfig.spec.json"
           }
         },
         "lint": {
@@ -64,9 +62,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-feature-flags-testing/src/test.ts",
-            "tsConfig": "projects/ngx-feature-flags-testing/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-feature-flags-testing/karma.conf.js"
+            "tsConfig": "projects/ngx-feature-flags-testing/tsconfig.spec.json"
           }
         },
         "lint": {
@@ -82,6 +78,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ngx-policy-authorization"
 }

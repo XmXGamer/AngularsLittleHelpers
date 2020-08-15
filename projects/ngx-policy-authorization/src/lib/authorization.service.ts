@@ -1,47 +1,65 @@
 import { Injectable } from '@angular/core';
-import { AuthorizationPolicyBuilder } from './models/authorization-policy-builder';
-import { AuthorizationPolicy } from './models/authorization-policy';
 import { Observable, Subject } from 'rxjs';
-import { PermissionChangedEvent } from './permission-changed-event';
+import { AuthorizationContext } from './models/authorization-context';
+import { AuthorizationOptions } from './models/authorization-options';
+import { AuthorizationPolicy } from './models/authorization-policy';
+import { AuthorizationPolicyBuilder } from './models/authorization-policy-builder';
 import { PermissionChangeType } from './permission-change-type.enum';
-
+import { PermissionChangedEvent } from './permission-changed-event';
+/**
+ * Represents the service to authorize the current context to have specific permissions or policies to be satisfied
+ *
+ * @export
+ * @class AuthorizationService
+ */
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthorizationService {
-  private _permissons: Set<string>;
-  private _permissionChangeSubject: Subject<PermissionChangedEvent>;
-  private _policys: Map<string, AuthorizationPolicy>;
+  private readonly permissons: Set<string>;
+  private readonly permissionChangeSubject: Subject<PermissionChangedEvent>;
 
-  get permissionChange$(): Observable<PermissionChangedEvent>{
-    return this._permissionChangeSubject.asObservable();
-  }
-  removePermission(arg0: string): void {
-    this._permissons.delete(arg0);
-    this._permissionChangeSubject.next(new PermissionChangedEvent(PermissionChangeType.Remove, Array.from(this._permissons)));
-  }
-
-  addPermission(arg0: string): void {
-    this._permissons.add(arg0);
-    this._permissionChangeSubject.next(new PermissionChangedEvent(PermissionChangeType.Add, Array.from(this._permissons)));
-  }
-  addPolicy(arg0: string, arg1: (c: AuthorizationPolicyBuilder) => AuthorizationPolicyBuilder): void {
-    const builder = new AuthorizationPolicyBuilder();
-    const policy: AuthorizationPolicy = arg1(builder).build();
-    this._policys.set(arg0, policy);
+  constructor(
+    private readonly options: AuthorizationOptions,
+    private readonly authorizationContext: AuthorizationContext
+  ) {
+    this.permissons = new Set<string>();
+    this.permissionChangeSubject = new Subject<PermissionChangedEvent>();
   }
 
-  authorize(policyName?: string): boolean {
-    const policy = this._policys.get(policyName as string);
-    if (!policy){
-      throw new Error(`InvalidOperationException: No policy found: ${policyName}.`);
+  get permissionChange$(): Observable<PermissionChangedEvent> {
+    return this.permissionChangeSubject.asObservable();
+  }
+  public removePermission(arg0: string): void {
+    this.permissons.delete(arg0);
+    this.permissionChangeSubject.next(
+      new PermissionChangedEvent(PermissionChangeType.Remove, Array.from(this.permissons))
+    );
+  }
+
+  public addPermission(arg0: string): void {
+    this.permissons.add(arg0);
+    this.permissionChangeSubject.next(
+      new PermissionChangedEvent(PermissionChangeType.Add, Array.from(this.permissons))
+    );
+  }
+
+  public authorize(policyName?: string): boolean {
+    if (policyName === undefined) {
+      return this.defaultPolicy();
     }
-    return policy.authorize(Array.from(this._permissons));
-  }
+    const policy: AuthorizationPolicy | undefined = this.options.getPolicy(policyName);
+    if (policy === undefined) {
+      throw new Error(`InvalidOperationException: No policy found with name ${policyName}.`);
+    }
 
-  constructor() {
-    this._policys = new Map<string, AuthorizationPolicy>();
-    this._permissons = new Set<string>();
-    this._permissionChangeSubject = new Subject<PermissionChangedEvent>();
+    return policy.authorize(this.authorizationContext);
+  }
+  public defaultPolicy(): boolean {
+    if (this.options.defaultPolicy !== undefined) {
+      return this.options.defaultPolicy.authorize(this.authorizationContext);
+    }
+
+    return this.authorizationContext.isAuthenticated;
   }
 }

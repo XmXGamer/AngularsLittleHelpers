@@ -1,3 +1,5 @@
+import { AuthorizationContext } from '../models/authorization-context';
+
 export interface IRequirement {
-    handle(permissions: string[]): boolean;
+  handle(context: AuthorizationContext): boolean;
 }
