@@ -4,10 +4,10 @@
 
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
-    "raagh.angular-karma-test-explorer",
     "ms-vscode.vscode-typescript-tslint-plugin",
     "esbenp.prettier-vscode",
-    "EditorConfig.EditorConfig"
+    "EditorConfig.EditorConfig",
+    "nrwl.angular-console"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []

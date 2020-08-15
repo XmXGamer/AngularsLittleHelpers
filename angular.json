@@ -1,83 +1,116 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
   "projects": {
     "ngx-policy-authorization": {
       "projectType": "library",
-      "root": "projects/ngx-policy-authorization",
-      "sourceRoot": "projects/ngx-policy-authorization/src",
-      "prefix": "lib",
+      "root": "libs/ngx-policy-authorization",
+      "sourceRoot": "libs/ngx-policy-authorization/src",
+      "prefix": "angulars-little-helpers",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "projects/ngx-policy-authorization/tsconfig.lib.json",
-            "project": "projects/ngx-policy-authorization/ng-package.json"
+            "tsConfig": "libs/ngx-policy-authorization/tsconfig.lib.json",
+            "project": "libs/ngx-policy-authorization/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-policy-authorization/tsconfig.lib.prod.json"
+              "tsConfig": "libs/ngx-policy-authorization/tsconfig.lib.prod.json"
             }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/ngx-policy-authorization/tsconfig.spec.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ngx-policy-authorization/tsconfig.lib.json",
-              "projects/ngx-policy-authorization/tsconfig.spec.json"
+              "libs/ngx-policy-authorization/tsconfig.lib.json",
+              "libs/ngx-policy-authorization/tsconfig.spec.json"
             ],
             "exclude": [
-              "**/node_modules/**"
+              "**/node_modules/**",
+              "!libs/ngx-policy-authorization/**/*"
             ]
           }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ngx-policy-authorization/jest.config.js",
+            "tsConfig": "libs/ngx-policy-authorization/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ngx-policy-authorization/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
     },
     "ngx-feature-flags-testing": {
       "projectType": "library",
-      "root": "projects/ngx-feature-flags-testing",
-      "sourceRoot": "projects/ngx-feature-flags-testing/src",
-      "prefix": "lib",
+      "root": "libs/ngx-feature-flags-testing",
+      "sourceRoot": "libs/ngx-feature-flags-testing/src",
+      "prefix": "angulars-little-helpers",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "projects/ngx-feature-flags-testing/tsconfig.lib.json",
-            "project": "projects/ngx-feature-flags-testing/ng-package.json"
+            "tsConfig": "libs/ngx-feature-flags-testing/tsconfig.lib.json",
+            "project": "libs/ngx-feature-flags-testing/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-feature-flags-testing/tsconfig.lib.prod.json"
+              "tsConfig": "libs/ngx-feature-flags-testing/tsconfig.lib.prod.json"
             }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/ngx-feature-flags-testing/tsconfig.spec.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ngx-feature-flags-testing/tsconfig.lib.json",
-              "projects/ngx-feature-flags-testing/tsconfig.spec.json"
+              "libs/ngx-feature-flags-testing/tsconfig.lib.json",
+              "libs/ngx-feature-flags-testing/tsconfig.spec.json"
             ],
             "exclude": [
-              "**/node_modules/**"
+              "**/node_modules/**",
+              "!libs/ngx-feature-flags-testing/**/*"
             ]
           }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ngx-feature-flags-testing/jest.config.js",
+            "tsConfig": "libs/ngx-feature-flags-testing/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ngx-feature-flags-testing/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress",
+      "style": "scss"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest",
+      "buildable": true,
+      "publishable": true,
+      "style": "scss",
+      "strict": true
     }
   },
   "defaultProject": "ngx-policy-authorization"

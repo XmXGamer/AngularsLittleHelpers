@@ -1,14 +1,9 @@
 {
-  "angularKarmaTestExplorer.debugMode": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.tslint": true
   },
   "tslint.alwaysShowRuleFailuresAsWarnings": false,
-  "typescript.preferences.importModuleSpecifier": "relative",
-  "quickSpec.defaultExtension": ".spec"
+  "typescript.preferences.importModuleSpecifier": "relative"
 }

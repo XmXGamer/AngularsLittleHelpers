@@ -1,35 +1,28 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+    "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
     "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
-    "module": "es2020",
-    "lib": ["es2018", "dom"],
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
     "paths": {
       "ngx-policy-authorization": [
-        "dist/ngx-policy-authorization/ngx-policy-authorization",
-        "dist/ngx-policy-authorization"
+        "libs/ngx-policy-authorization/src/index.ts"
       ],
       "ngx-feature-flags-testing": [
-        "dist/ngx-feature-flags-testing/ngx-feature-flags-testing",
-        "dist/ngx-feature-flags-testing"
+        "libs/ngx-feature-flags-testing/src/index.ts"
       ]
     }
   },
-  "angularCompilerOptions": {
-    "strictInjectionParameters": true,
-    "strictTemplates": true
-  }
+  "exclude": ["node_modules", "tmp"]
 }

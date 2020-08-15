@@ -2,6 +2,7 @@
   "extends": [
     "tslint:recommended",
     "tslint-immutable",
+    "rxjs-tslint-rules",
     "tslint-sonarts",
     "tslint-clean-code",
     "tslint-consistent-codestyle",
@@ -9,22 +10,17 @@
     "tslint-config-prettier"
   ],
   "rulesDirectory": [
-    "codelyzer",
-    "tslint-consistent-codestyle"
+    "node_modules/@nrwl/workspace/src/tslint",
+    "node_modules/codelyzer"
   ],
+  "linterOptions": {
+    "exclude": ["**/*"]
+  },
   "rules": {
     "no-redundant-jsdoc": false,
     "no-relative-imports": false,
     "function-name": false,
     "export-name": false,
     "no-parameter-properties": false
-  },
-  "linterOptions": {
-    "exclude": [
-      "**/test.ts",
-      "**/*.config.js",
-      "**/*.conf.js",
-      "__mocks__/**/*.*"
-    ]
   }
 }
