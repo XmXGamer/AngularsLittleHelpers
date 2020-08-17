@@ -1,7 +1,7 @@
 module.exports = {
   name: 'ngx-policy-authorization',
   preset: '../../jest.config.js',
-  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
+  setupFilesAfterEnv: ['jest-extended', '<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
       tsConfig: '<rootDir>/tsconfig.spec.json',

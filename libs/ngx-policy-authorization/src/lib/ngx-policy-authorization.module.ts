@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { AuthorizationService } from './authorization.service';
+import { NotImplementedError } from 'common-errors';
 import { AuthorizeDirective } from './authorize.directive';
-import { AuthorizationOptions } from './models/authorization-options';
+import { AuthorizationConfigurationService } from './services/authorization-configuration.service';
 
 /**
  * The main entry point of this project
@@ -14,7 +14,7 @@ import { AuthorizationOptions } from './models/authorization-options';
 @NgModule({
   declarations: [AuthorizeDirective],
   imports: [],
-  providers: [AuthorizationOptions],
+  providers: [],
   exports: [AuthorizeDirective],
 })
 // tslint:disable-next-line: no-unnecessary-class
@@ -28,19 +28,8 @@ export class NgxPolicyAuthorizationModule {
    * @memberof NgxPolicyAuthorizationModule
    */
   public static withPolicies(
-    policies: (c: AuthorizationOptions) => void
+    policies: (c: AuthorizationConfigurationService) => void
   ): ModuleWithProviders<NgxPolicyAuthorizationModule> {
-    const options: AuthorizationOptions = new AuthorizationOptions();
-    policies(options);
-
-    return {
-      ngModule: NgxPolicyAuthorizationModule,
-      providers: [
-        {
-          provide: AuthorizationOptions,
-          useValue: options,
-        },
-      ],
-    };
+    throw new NotImplementedError('');
   }
 }

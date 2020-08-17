@@ -1,4 +1,3 @@
-import { IRequirement } from './i-requirement';
 /**
  * Represent a requirement for a policy which is set statically with true or false
  *
@@ -6,7 +5,7 @@ import { IRequirement } from './i-requirement';
  * @class StaticValueRequirement
  * @implements {IRequirement}
  */
-export class StaticValueRequirement implements IRequirement {
+/* export class StaticValueRequirement implements IRequirement {
   private readonly stativValue: boolean;
   constructor(staticValue: boolean) {
     this.stativValue = staticValue;
@@ -14,4 +13,4 @@ export class StaticValueRequirement implements IRequirement {
   public handle(permissions: string[]): boolean {
     return this.stativValue;
   }
-}
+} */

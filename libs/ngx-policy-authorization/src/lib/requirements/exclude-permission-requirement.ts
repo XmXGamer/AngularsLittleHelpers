@@ -1,4 +1,4 @@
-export class ExcludePermissionRequirement {
+/* export class ExcludePermissionRequirement {
     private _permission: string;
     constructor(permission: string){
         this._permission = permission;
@@ -7,3 +7,4 @@ export class ExcludePermissionRequirement {
         return !permissions.includes(this._permission);
     }
 }
+ */

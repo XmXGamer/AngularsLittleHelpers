@@ -1,20 +1,7 @@
 {
   "extends": "../../tslint.json",
   "rules": {
-    "directive-selector": [
-      true,
-      "attribute",
-      "angularsLittleHelpers",
-      "camelCase"
-    ],
-    "component-selector": [
-      true,
-      "element",
-      "angulars-little-helpers",
-      "kebab-case"
-    ]
-  },
-  "linterOptions": {
-    "exclude": ["!**/*"]
+    "directive-selector": [true, "attribute", "angularsLittleHelpers", "camelCase"],
+    "component-selector": [true, "element", "angulars-little-helpers", "kebab-case"]
   }
 }
