@@ -6,7 +6,7 @@
 # https://github.com/actions/labeler
 
 name: Labeler
-on: 
+on:
   pull_request:
     types: [opened, synchronize]
 
@@ -19,3 +19,8 @@ jobs:
     - uses: actions/labeler@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+    - uses: TimonVS/pr-labeler-action@v3
+        with:
+          configuration-path: .github/pr-labeler.yml # optional, .github/pr-labeler.yml is the default value
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
