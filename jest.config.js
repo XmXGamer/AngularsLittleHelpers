@@ -5,5 +5,7 @@ module.exports = {
   },
   resolver: '@nrwl/jest/plugins/resolver',
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageReporters: ['html'],
+  reporters: ['default', 'jest-html-reporters'],
+  coverageReporters: ['html', 'lcov'],
+  testResultsProcessor: 'jest-sonar-reporter',
 };

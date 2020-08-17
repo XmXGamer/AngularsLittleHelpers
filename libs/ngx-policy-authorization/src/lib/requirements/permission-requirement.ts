@@ -1,4 +1,4 @@
-import { IRequirement } from './i-requirement';
+/* import { IRequirement } from './i-requirement';
 
 export class PermissionRequirement implements IRequirement{
     private _permission: string;
@@ -9,3 +9,4 @@ export class PermissionRequirement implements IRequirement{
         return permissions.includes(this._permission);
     }
 }
+ */

@@ -24,6 +24,8 @@ libpeerconnection.log/
 npm-debug.log
 testem.log
 typings/
+jest_html_reporters.html
+test-report.xml
 
 # System Files
 .DS_Store/
