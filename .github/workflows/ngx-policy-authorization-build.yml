@@ -35,7 +35,7 @@ jobs:
 
       - name: npm test
         run: |
-          npm run nx -- test ngx-policy-authorization
+          npm run nx -- test ngx-policy-authorization --codeCoverage
 
       - name: npm build
         run: |
@@ -46,4 +46,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          projectBaseDir: libs\ngx-policy-authorization
+          projectBaseDir: libs/ngx-policy-authorization
