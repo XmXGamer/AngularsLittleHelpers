@@ -6,5 +6,5 @@ module.exports = {
   resolver: '@nrwl/jest/plugins/resolver',
   moduleFileExtensions: ['ts', 'js', 'html'],
   reporters: ['default', 'jest-html-reporters', 'jest-sonar'],
-  coverageReporters: ['html', 'lcov'],
+  coverageReporters: ['html', ['lcov', { projectRoot: 'libs/ngx-policy-authorization' }]],
 };
