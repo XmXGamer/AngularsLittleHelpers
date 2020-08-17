@@ -5,9 +5,13 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'libs/ngx-policy-authorization/**/*.*'
   pull_request:
     branches:
       - master
+    paths:
+      - 'libs/ngx-policy-authorization/**/*.*'
 jobs:
   build:
     runs-on: ubuntu-latest
