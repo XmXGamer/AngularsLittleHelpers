@@ -13,4 +13,10 @@ describe('AuthorizeGuard', () => {
   it('should be created', () => {
     expect(guard).toBeTruthy();
   });
+  it('should be created2', () => {
+    expect(guard).toBeTruthy();
+  });
+  it('should be created3', () => {
+    expect(guard).toBeTruthy();
+  });
 });
