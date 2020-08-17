@@ -1,0 +1,4 @@
+product ngx-policy-authorization:
+  - libs/ngx-policy-authorization/src/**/*
+product ngx-feature-flags-testing:
+  - libs/ngx-feature-flags-testing/src/**/*
