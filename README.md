@@ -96,3 +96,95 @@ Nx Cloud pairs with Nx in order to enable you to build and test code more rapidl
 Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
 
 Visit [Nx Cloud](https://nx.app/) to learn more.
+
+# Labels
+
+## Definitions
+
+**Assignment to Issues or Pull Requests**
+
+Most of the labels can be applied to both Issues and Pull Requests, however for some labels it may not make sense to apply it to one or the other.
+
+### Priority
+
+#### "Priority: Critical"
+
+This should be dealt with ASAP. Not fixing this issue would be a serious error.
+
+#### "Priority: High"
+
+After critical issues are fixed, these should be dealt with before any further issues.
+
+#### "Priority: Medium"
+
+This issue may be useful, and needs some attention.
+
+#### "Priority: Low"
+
+This issue can probably be picked up by anyone looking to contribute to the project, as an entry fix.
+
+### Type
+
+#### "Type: Bug"
+
+Inconsistencies or issues which will cause an issue or problem for users or implementors.
+
+#### "Type: Maintenance"
+
+Updating phrasing or wording to make things clearer or removing ambiguity, without changing the functionality.
+
+#### "Type: Enhancement"
+
+Most issues will probably ask for additions or changes. It's expected that this type of issue will result in a Pull Request.
+
+#### "Type: Question"
+
+A query or seeking clarification on parts of the spec. Probably doesn't need the attention of everyone, just a few to help bring clarification or explain intent.
+
+### Status
+
+The status label may apply to both Issues and Pull Requests.
+
+#### "Status: Available"
+
+No one has claimed responsibility for resolving this issue. Generally this will be applied to bugs and enhancement issues, but may be applied to others.
+
+#### "Status: Accepted"
+
+It's clear what the subject of the issue is about, and what the resolution should be.
+
+#### "Status: Blocked"
+
+There is another issue that needs to be resolved first, or a specific person is required to comment or reply to progress. There may also be some external blocker.
+
+#### "Status: Completed"
+
+Nothing further to be done with this issue. Awaiting to be closed by the requestor out of politeness, or can be closed by a project member.
+
+#### "Status: In Progress"
+
+This issue is being worked on, and has someone assigned.
+
+#### "Status: On Hold"
+
+Similar to blocked, but is assigned to someone. May also be assigned to someone because of their experience, but it's recognised they are unable to process the issue at this time.
+
+#### "Status: Review Needed"
+
+The issue has a PR attached to it which needs to be reviewed. Should receive review by others in the community, and at least one member / comitter. Specifics on when merging PRs is allowed is still up for debate.
+
+#### "Status: Revision Needed"
+
+At least two people have seen issues in the PR that makes them uneasy. Submitter of PR needs to revise the PR related to the issue.
+
+#### "Status: Abandoned"
+
+It's believed that this issue is no longer important to the requestor and no one else has shown an interest in it.
+
+## Combinations
+
+An issue should only have one label from the _Priority_ category, and one from the _Type_ category. It may make sense to combine some _Status_ category labels to an issue or PR, but not others.
+
+For example, it makes sense for an issue to be both _In Progress_ and _On Hold_. The issue may have someone assigned who has started work, but is waiting for another issue to be completed first, allowing them to focus on one thing at a time. However, an issue _In Progress_ cannot also be _Abandoned_
+
+A further example, _Available_ and _Accepted_ could happen if the scope and resolution of the issue has clearly been agreed, but no one is currently willing to be responsible to fix it, for whatever reason. However, you would not apply _On Hold_, as there is no one assigned to the task, nor would you apply _Blocked_ if nothing has been identified as a problem to resolving the issue. In addition, you wouldn't apply _Revision Needed_ as there is no associated PR.
