@@ -10,7 +10,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "tslint -t json -o tslint-report.json --project libs/ngx-policy-authorization/tsconfig.lib.json -c libs/ngx-policy-authorization/tslint.json --force",
+    "lint": "tslint -t json -o libs/ngx-policy-authorization/tslint-report.json --project libs/ngx-policy-authorization/tsconfig.lib.json -c libs/ngx-policy-authorization/tslint.json --force",
     "e2e": "ng e2e",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
