@@ -47,6 +47,14 @@ jobs:
         run: |
           npm run lint
 
+      - name: Read package.json
+        id: package
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./libs/ngx-policy-authorization/tslint-report.json
+      - name: Echo package.json
+        run: echo ${{ steps.package.outputs.content }}
+
       - name: npm build
         run: |
           npm run nx -- build ngx-policy-authorization --prod
